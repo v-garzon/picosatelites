@@ -35,11 +35,12 @@ function News() {
                                         </a>
                                     </div>
                                     <div className='w-full p-2 flex justify-center sm:justify-start'>
-                                        <ReactAudioPlayer
-                                            src={interviewRadiogava}
-                                            controls
-                                            
-                                        />
+                                        
+                                        <audio controls>
+                                            <source src={interviewRadiogava} type='audio/mp3'/>
+                                            Your browser does not support the audio tag.
+                                        </audio>
+                                        
                                     </div>
                                     <footer className='w-full flex justify-end'>
                                         <p className='text-sm text-slate-500 font-semibold'>00 / 11 / 2022</p>
@@ -57,11 +58,12 @@ function News() {
                                         </a>
                                     </div>
                                     <div className='w-full p-2 flex justify-center sm:justify-start'>
-                                        <ReactAudioPlayer
-                                            src={interviewRadiogava}
-                                            controls
-                                            
-                                        />
+                                        
+                                        <audio controls>
+                                            <source src={interviewRadiogava} type='audio/mp3'/>
+                                            Your browser does not support the audio tag.
+                                        </audio>
+                                        
                                     </div>
                                     <footer className='w-full flex justify-end'>
                                         <p className='text-sm text-slate-500 font-semibold'>00 / 11 / 2022</p>
@@ -79,10 +81,12 @@ function News() {
                                         </a>
                                     </div>
                                     <div className='w-full p-2 flex justify-center sm:justify-start'>
-                                        <ReactAudioPlayer
-                                            src={interviewRadiogava}
-                                            controls
-                                        />
+                                        
+                                        <audio controls>
+                                            <source src={interviewRadiogava} type='audio/mp3'/>
+                                            Your browser does not support the audio tag.
+                                        </audio>
+                                        
                                     </div>
                                     <footer className='w-full flex justify-end'>
                                         <p className='text-sm text-slate-500 font-semibold'>00 / 11 / 2022</p>
@@ -100,15 +104,18 @@ function News() {
                                         </a>
                                     </div>
                                     <div className='w-full p-2 flex justify-center sm:justify-start'>
-                                        <ReactAudioPlayer
-                                            src={interviewRadiogava}
-                                            controls
-                                        />
+                                        
+                                        <audio controls>
+                                            <source src={interviewRadiogava} type='audio/mp3'/>
+                                            Your browser does not support the audio tag.
+                                        </audio>
+                                        
                                     </div>
                                     <footer className='w-full flex justify-end'>
                                         <p className='text-sm text-slate-500 font-semibold'>00 / 11 / 2022</p>
                                     </footer>
                                 </li>
+                                
                             </ul>
                         </div>
                         <div className='hidden md:flex justify-center h-[600px]'>

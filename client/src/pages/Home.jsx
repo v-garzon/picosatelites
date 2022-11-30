@@ -34,7 +34,7 @@ function Home() {
             <ScrollToTopOnMount />
             
             <div className='text-white flex justify-center mb-[7rem]'>
-                <div className='w-full h-screen overflow-hidden absolute' style={{ height: 'calc(100vh - 80px)' }}>
+                <div className='w-full h-screen overflow-hidden absolute bg-transparent' style={{ height: 'calc(100vh - 80px)' }}>
                     <video
                         id='video'
                         className='mix-blend-overlay h-full object-cover w-full bg-black'
@@ -45,7 +45,8 @@ function Home() {
                         // controls
                         preload='metadata'
                         alt=''
-                        src={bgVideo} />
+                        src={bgVideo} 
+                        type='video/mp4'/>
                 </div>
 
                 <div className='max-w-[1240px] w-full mx-5' style={{ height: 'calc(100vh - 80px)' }}>

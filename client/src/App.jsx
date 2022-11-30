@@ -4,11 +4,11 @@ import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-import About from './pagess/About'
-import Home from './pagess/Home'
-import News from './pagess/News'
-import OurTeam from './pagess/OurTeam'
-import Project from './pagess/Project'
+import About from './pages/About'
+import Home from './pages/Home'
+import News from './pages/News'
+import OurTeam from './pages/OurTeam'
+import Project from './pages/Project'
 
 function App() {
     return (
