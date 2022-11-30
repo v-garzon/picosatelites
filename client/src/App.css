@@ -1,0 +1,21 @@
+:root {
+    font-family: 'Poppins', sans-serif;
+}
+
+.map-container {
+    height: 100%;
+    width: 100%
+}
+
+.dropdown {
+    animation: dropdown 0.4 ease 1 forwards;
+}
+
+@keyframes dropdown {
+    from {
+        transform: translateY(-1000px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
