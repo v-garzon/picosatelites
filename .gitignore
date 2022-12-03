@@ -4,3 +4,4 @@ client/node_modules
 client/dist
 client/src/assets/interview-radiogava.mp3
 client/src/assets/space-video(trash).mp4
+.vscode
