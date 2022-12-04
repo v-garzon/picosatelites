@@ -27,10 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
-    - run: cd client/
-    - run: pwd
-    - run: npm i
-    - run: npm run build #--if-present
-    - run: cd ..
-    - run: pm2 start server/index.js
-    # - run: npm test
+    - run: npm --prefix ./client/ i
+    - run: npm run --prefix ./client/ build
+    - run: npm run startd
+
