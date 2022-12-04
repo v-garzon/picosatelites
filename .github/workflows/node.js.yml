@@ -29,5 +29,5 @@ jobs:
     - run: npm i
     - run: npm --prefix ./client/ i
     - run: npm run --prefix ./client/ build
-    - run: npm run startd
+    - run: npm run start
 
