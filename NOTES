@@ -1,1 +1,7 @@
 https://enacast.com/media/recordedpodcasts/radiogava/2022/11/14/2022-11-14_gavamati_989166.cutted.mp3
+
+PROBLEM WITH VIDEO IS \ className='mix-blend-overlay' \
+
+
+ultima nota:
+    Hay que meter el texto de inicio en un div sticky que tenga un h-fit y bottom-0 para que todo el conjunto de letras se mueva con el scrolling hasta encontrar su posicion final que sera pegado a la parte de abajo del video. 

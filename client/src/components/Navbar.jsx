@@ -21,7 +21,7 @@ function Navbar() {
 
     })
     return (
-        <div id='navbar' className='w-screen h-[80px] z-10 fixed top-0 drop-shadow-xl bg-white'>
+        <div id='navbar' className='w-screen h-[80px] z-10 sticky top-0 drop-shadow-xl bg-transparent'>
             <div className='px-2 sm:px-10 flex justify-between z-10 items-center h-full'>
                 <h1 className='flex text-3xl sm:text-4xl font-bold'><Link to='/'>BRAND.</Link></h1>
 
