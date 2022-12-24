@@ -12,16 +12,16 @@ function Home() {
 
     const { pullPageContent } = useText()
 
-    const [content, setContent] = useState( () => pullPageContent({ page: 'HOME' }))
+    const [content, setContent] = useState(() => pullPageContent({ page: 'HOME' }))
 
 
-  const attemptPlay = () => {
-    videoEl &&
-      videoEl.current &&
-      videoEl.current.play().catch((error) => {
-        console.error("Error attempting to play", error);
-      });
-  };
+    const attemptPlay = () => {
+        videoEl &&
+            videoEl.current &&
+            videoEl.current.play().catch((error) => {
+                console.error("Error attempting to play", error);
+            });
+    };
 
     const writeDownContent = (t) => {
         switch (t.section) {
@@ -64,43 +64,43 @@ function Home() {
                         type='video/mp4' />
                 </div>
 
-        <div
-          className="max-w-[1240px] w-full mx-5"
-          style={{ height: "calc(100vh - 80px)" }}
-        >
-          <div className="grid md:grid-cols-2 h-full w-full relative">
-            <div className="flex flex-col justify-center w-full h-full">
-              <h1 className="mt-[-8rem] sm:mt-[7rem] text-4xl md:text-5xl lg:text-6xl font-bold uppercase w-full">
-                Let's connect <br />
-                through Space
-              </h1>
+                <div
+                    className="max-w-[1240px] w-full mx-5"
+                    style={{ height: "calc(100vh - 80px)" }}
+                >
+                    <div className="grid md:grid-cols-2 h-full w-full relative">
+                        <div className="flex flex-col justify-center w-full h-full">
+                            <h1 className="mt-[-8rem] sm:mt-[7rem] text-4xl md:text-5xl lg:text-6xl font-bold uppercase w-full">
+                                Let's connect <br />
+                                through Space
+                            </h1>
 
-              <Link to="learn-more" smooth={true} offset={-150} duration={500} className=''>
-                <button className=" button-dark hidden sm:block mt-5 w-fit py-4 px-8 text-2xl">
-                  Learn More
-                </button>
-              </Link>
+                            <Link to="learn-more" smooth={true} offset={-150} duration={500} className=''>
+                                <button className=" button-dark hidden sm:block mt-5 w-fit py-4 px-8 text-2xl">
+                                    Learn More
+                                </button>
+                            </Link>
 
-              <Link
-                to="learn-more"
-                smooth={true}
-                offset={-150}
-                duration={500}
-                className=""
-              >
-                <button
-                  className="
+                            <Link
+                                to="learn-more"
+                                smooth={true}
+                                offset={-150}
+                                duration={500}
+                                className=""
+                            >
+                                <button
+                                    className="
                 absolute bottom-3
                 sm:hidden w-full flex flex-col-reverse items-center text-slate-600 text-2xl"
-                >
-                  Learn More
-                  <ChevronDoubleUpIcon className="w-10" />
-                </button>
-              </Link>
+                                >
+                                    Learn More
+                                    <ChevronDoubleUpIcon className="w-10" />
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
             <div name='learn-more' className='div' >
                 <div className='subdiv'>
@@ -136,30 +136,31 @@ function Home() {
                     </div>
                 </div>
 
-      <div className="div">
-        <div className="subdiv">
-          <h2 className="h2">An internacional project</h2>
-          <div className="subsubdiv grid-cols-9">
-            <div className="col-span-5 px-10 py-5">
-              <p className="p">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum."
-              </p>
+                <div className="div">
+                    <div className="subdiv">
+                        <h2 className="h2">An internacional project</h2>
+                        <div className="subsubdiv grid-cols-9">
+                            <div className="col-span-5 px-10 py-5">
+                                <p className="p">
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                    sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                </p>
+                            </div>
+                            <picture className="col-span-4 picture">
+                                ( here goes an image )
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <h3>hello world</h3>
             </div>
-            <picture className="col-span-4 picture">
-              ( here goes an image )
-            </picture>
-          </div>
         </div>
-      </div>
-      <h3>hello world</h3>
-    </div>
-  );
+    );
 }
 
 export default Home;
