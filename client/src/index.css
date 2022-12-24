@@ -12,7 +12,7 @@
 @layer base { 
     
     .page {
-        @apply mt-[80px] w-full items-center
+        @apply w-full items-center /* mt-[80px] */
     }
 
     .div {
