@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-scroll'
+import { Link } from 'react-router-dom'
+import { Link as LinkScroll } from 'react-scroll'
 
 import { FaFacebook, FaGithub, FaTwitch, FaTwitter, FaInstagram } from 'react-icons/fa'
 import { ArrowUturnUpIcon } from '@heroicons/react/24/outline'
@@ -63,7 +64,9 @@ function Footer() {
                             <li>Contact</li>
                             <li>Av. de les Bòbiles, 1, 08850 Gavà, Barcelona</li>
                             <li>(@ or tel)</li>
+                            <li className='font-bold'><Link to='/edit'>EDIT PAGE</Link></li>
                             
+
                         </ul>
                     </div>
                     <div>
@@ -90,14 +93,14 @@ function Footer() {
                 </div>
                 <div className='flex flex-col sm:grid sm:grid-cols-3 w-full py-6 items-center'>
                     <div className='text-slate-500 text-sm '>
-                        <p>&copy;  2022 COPYRIGHT - BRAND. <br className='hidden sm:block'/> ALL RIGHTS RESERVED</p>
+                        <p>&copy;  2022 COPYRIGHT - BRAND. <br className='hidden sm:block' /> ALL RIGHTS RESERVED</p>
                     </div>
 
                     <div className='w-full hidden sm:flex justify-center items-center text-slate-500'>
-                        <Link to='top' smooth={true} offset={-500} duration={500} className='flex border border-slate-500 px-4 py-2 cursor-pointer'>
+                        <LinkScroll to='top' smooth={true} offset={-500} duration={500} className='flex border border-slate-500 px-4 py-2 cursor-pointer'>
                             <p className='uppercase'>Return to top</p>
                             <ArrowUturnUpIcon className='w-4 ml-2' />
-                        </Link>
+                        </LinkScroll>
                     </div>
 
                     <div className='flex justify-between sm:pl-20 w-full pt-6 sm:pt-0 text-2xl text-slate-500'>

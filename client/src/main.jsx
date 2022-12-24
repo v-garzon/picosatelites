@@ -1,13 +1,20 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import ReactDOM, { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider, BrowserRouter } from 'react-router-dom'
 import App from './App'
+import { TextContextProvider } from './context/text.context'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+
+const container = document.getElementById('root')
+const root = createRoot(container)
+
+
+root.render(
     <React.StrictMode>
-        <BrowserRouter>
+        <TextContextProvider>
             <App />
-        </BrowserRouter>
+        </TextContextProvider>
     </React.StrictMode>
 )

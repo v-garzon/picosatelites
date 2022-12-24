@@ -1,5 +1,6 @@
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 
+import router from './router/router'
 
 import './App.css'
 import Footer from './components/Footer'
@@ -10,20 +11,17 @@ import News from './pages/News'
 import OurTeam from './pages/OurTeam'
 import Project from './pages/Project'
 
+import SignUp from './pages/auth/SignUp'
+import Login from './pages/auth/Login'
+
+import UserContextLayout from './context/layout/user.context.layout'
+import Edit from './pages/edit/Edit'
+
+
 function App() {
     return (
-        <div className="App">
-            <Navbar />
-            
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/about' element={<About />} />
-                    <Route path='/ourteam' element={<OurTeam />} />
-                    <Route path='/news' element={<News />} />
-                    <Route path='/project' element={<Project />} />
-                </Routes>
-            
-            <Footer />
+        <div className="App">            
+            <RouterProvider router={router} />
         </div>
     )
 }

@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { Link as LinkScroll } from 'react-scroll'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useScrollLock } from '../hooks/ScrollLock'
+import { useText } from '../context/text.context'
 
 function Navbar() {
+
+    const { user, logout } = useText()
+
+    const navigate = useNavigate()
 
     const [hasFocus, setFocus] = useState(false)
     const { lockScroll, unlockScroll } = useScrollLock()
@@ -17,9 +21,7 @@ function Navbar() {
         unlockScroll()
     }
 
-    useEffect(() => {
 
-    })
     return (
         <div id='navbar' className='w-screen h-[80px] z-10 fixed top-0 drop-shadow-xl bg-white'>
             <div className='px-2 sm:px-10 flex justify-between z-10 items-center h-full'>
@@ -30,7 +32,16 @@ function Navbar() {
                     <li><Link to='/project'>(Project Name)</Link></li>
                     <li><Link to='/ourteam'>Our Team</Link></li>
                     <li><Link to='/news'>News</Link></li>
-                    <li><Link to='/about'>About</Link></li>
+                    <li><Link to='/support'>About</Link></li>
+                    {!user ? "" :
+                        <>
+                            <li><Link to='/edit'>Edit</Link></li>
+                            <button onClick={() => {
+                                navigate('/')
+                                logout()
+                            }}>Logout</button>
+                        </>
+                    }
                 </ul>
 
                 <button id='button' className='md:hidden mr-4'
@@ -45,7 +56,16 @@ function Navbar() {
                 <li className='border-b-2 border-zinc-300 w-full p-4'><Link className='w-full' to='/project' onClick={handleClick}>(Project Name)</Link></li>
                 <li className='border-b-2 border-zinc-300 w-full p-4'><Link className='w-full' to='/ourteam' onClick={handleClick}>Our Team</Link></li>
                 <li className='border-b-2 border-zinc-300 w-full p-4'><Link className='w-full' to='/news' onClick={handleClick}>News</Link></li>
-                <li className='border-zinc-300 w-full p-4'>           <Link to='/about' onClick={handleClick}>About</Link></li>
+                <li className='border-b-2 border-zinc-300 w-full p-4'>           <Link className='w-full' to='/support' onClick={handleClick}>About</Link></li>
+                {!user ? "" :
+                    <>
+                        <li className='border-b-2 border-zinc-300 w-full p-4'><Link className='w-full' to='/edit'>Edit</Link></li>
+                        <button className='border-b-2 border-zinc-300 w-full p-4' onClick={() => {
+                            navigate('/')
+                            logout()
+                        }}>Logout</button>
+                    </>
+                }
 
             </ul>
 

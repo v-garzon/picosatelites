@@ -4,8 +4,8 @@ const pool = createPool({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'el_pensamiento_critico_es_un_privilegio_de_los_que_piensan',
-    database: 'database'
+    password: 'el pensamiento critico es un privilegio de los que piensan',
+    database: 'SatInt_db'
 })
 
 export default pool

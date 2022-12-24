@@ -7,7 +7,7 @@
 
 
 
-/* * {border: 1px solid white} */
+/* * {border: 1px solid black} */
 
 @layer base { 
     
@@ -85,7 +85,48 @@
     footer span {
         @apply text-4xl px-1
     }
+
+    /* AUTH FORMS */
+    .auth-label {
+        @apply border-b-2 border-slate-500 pl-5 mb-2 pb-1 text-xl 
+    }
+
+    .auth-input {
+        @apply border border-slate-500 mb-8 px-2 py-1 text-base text-slate-900 font-light
+    }
+
+    .auth-button {
+        @apply border border-slate-900 mt-4 py-2 text-slate-900 hover:text-white hover:bg-slate-900
+    }
+
+    /* EDIT FORMS */
+    .edit-form {
+        @apply flex w-full flex-col 
+    }
+
+    .edit-fieldset {
+        @apply grid place-items-start md:grid-cols-2 border-b-2 border-slate-500 py-4 px-8 gap-x-4
+    }
+
+    .edit-label {
+        @apply w-full h-full 
+    }
+
+    .edit-select {
+        @apply px-3 py-2 w-full  bg-gray-200
+    }
     
+    .edit-textarea {
+        @apply w-full min-h-[200px] bg-gray-200 p-4 text-sm  border border-gray-300
+    }
+
+    .edit-input {
+        @apply w-full  bg-gray-200 flex px-3 py-2
+    }
+
+    .edit-button {
+        @apply auth-button w-fit px-10 py-3 self-end md:mr-8
+    }
 } 
 
 @layer utilities {
@@ -94,3 +135,6 @@
     }
 }
 
+textarea:focus, input:focus {
+    outline: none;
+}
