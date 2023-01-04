@@ -12,7 +12,7 @@ function Home() {
 
     const { pullPageContent } = useText()
 
-    const [content, setContent] = useState(() => pullPageContent({ page: 'HOME' }))
+    const [content, setContent] = useState()
 
 
     const attemptPlay = () => {
@@ -23,25 +23,20 @@ function Home() {
             });
     };
 
-    const writeDownContent = (t) => {
-        switch (t.section) {
-            case 'Our Purpose':
-                document.getElementById('1-text').innerHTML(t.content)
-                break
-            case 'An International Project':
-                document.getElementById('2-text').innerHTML(t.content)
-                break
-            default:
-                console.error('Error: An error ocurred while getting content')
+    const getContent = async () => {
+        if (!content) {
+            var response = await pullPageContent({ page: 'HOME' })
+            // console.log(response)
+            setContent(response)
         }
     }
 
     useEffect(() => {
         attemptPlay()
-        // pullPageContent({ page: 'HOME' })
-        console.log(content)
+        getContent()
+        // console.log(content)
 
-    })
+    }, [])
 
 
     return (
@@ -113,7 +108,11 @@ function Home() {
                         </picture>
                         <div className='col-span-3 md:px-10 py-5'>
                             <p className='p' id='1-text'>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                {
+                                    !content
+                                        ? '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+                                        : content['Our Purspose'].content
+                                }
                             </p>
                         </div>
 
@@ -121,13 +120,19 @@ function Home() {
                 </div>
             </div>
 
+
+
             <div className='div' >
                 <div className='subdiv'>
                     <h2 className='h2'>An internacional project</h2>
                     <div className='subsubdiv grid-cols-9' >
                         <div className='col-span-5 px-10 py-5'>
                             <p className='p' id='2-text'>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                {
+                                    !content
+                                        ? '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
+                                        : content['An Internationa Project'].content
+                                }
                             </p>
                         </div>
                         <picture className='col-span-4 picture' id='2-image'>
@@ -136,28 +141,8 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="div">
-                    <div className="subdiv">
-                        <h2 className="h2">An internacional project</h2>
-                        <div className="subsubdiv grid-cols-9">
-                            <div className="col-span-5 px-10 py-5">
-                                <p className="p">
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                    sunt in culpa qui officia deserunt mollit anim id est laborum."
-                                </p>
-                            </div>
-                            <picture className="col-span-4 picture">
-                                ( here goes an image )
-                            </picture>
-                        </div>
-                    </div>
-                </div>
-                <h3>hello world</h3>
+
+
             </div>
         </div>
     );

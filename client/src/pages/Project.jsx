@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 import ScrollToTopOnMount from '../components/ScrollTo/ScrollToTopOnMount'
+import { useText } from '../context/text.context'
 
 function Project() {
+
+    const { pullPageContent } = useText()
+
+    const [content, setContent] = useState(null)
+
+    const getContent = async () => {
+        if (!content) {
+            var response = await pullPageContent({ page: 'PROJECT' })
+            // console.log(response)
+            setContent(response)
+        }
+    }
+
+    useEffect(() => {
+        getContent()
+        // console.log(content)
+    })
+
     return (
         <div name='top' className='page'>
             <ScrollToTopOnMount />
@@ -14,7 +34,11 @@ function Project() {
                     <h2 className='h2'>Objectives</h2>
                     <div>
                         <p className='p'>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            {
+                                !content ?
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." :
+                                    content['Objectives'].content
+                            }
                         </p>
                     </div>
                 </div>
@@ -25,7 +49,11 @@ function Project() {
                     <h2 className='h2'>Hardware & Architecture</h2>
                     <div>
                         <p className='p'>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            {
+                                !content ?
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." :
+                                    content['Hardware'].content
+                            }
                         </p>
                     </div>
                     <div>
@@ -41,7 +69,11 @@ function Project() {
                     <h2 className='h2'>Software</h2>
                     <div>
                         <p className='p'>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            {
+                                !content ?
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." :
+                                    content['Software'].content
+                            }
                         </p>
                     </div>
                     <div>
@@ -57,7 +89,11 @@ function Project() {
                     <h2 className='h2'>Ground Station</h2>
                     <div>
                         <p className='p'>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            {
+                                !content ?
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." :
+                                    content['Ground Station'].content
+                            }
                         </p>
                     </div>
                 </div>

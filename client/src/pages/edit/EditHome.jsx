@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Form, Formik } from 'formik'
 import { useText } from '../../context/text.context'
 
@@ -6,8 +6,19 @@ function EditHome() {
 
     const { homeError, setHomeError } = useState(null)
 
-    const { user, pushNewContent } = useText()
+    const { user, pushNewContent, pullPageContent } = useText()
 
+    const [content, setContent] = useState()
+
+    // const getContent = async () => {
+    //     var response = await pullPageContent({ page: 'HOME' })
+    //     // console.log(response)
+    //     setContent(response)
+    // }
+
+    // useEffect(() => {
+    //     getContent()
+    // })
 
     return (
         <div className='div' name='home'>
@@ -16,18 +27,24 @@ function EditHome() {
                 <div className=''>
                     <Formik
                         enableReinitialize={true}
-                        initialValues={{
-                            page: 'HOME',
-                            section: '',
-                            content: '',
-                            image: '',
-                            user: user.username,
-                            user_id: user.id
-                        }}
+                        initialValues={ !content ?
+                            {
+                                page: 'HOME',
+                                section: '',
+                                content: '',
+                                image: '',
+                                user: user.username,
+                                user_id: user.id
+                            } :
+                            {
+                                page: 'HOME',
+                                section: 'Our Purpose',
+
+                            }}
                         onSubmit={async (values) => {
-                            console.log(values)
+                            // console.log(values)
                             const response = await pushNewContent(values)
-                            console.log(response)
+                            // console.log(response)
                         }}
                     >
                         {({ isSubmitting, handleChange, values }) => (
