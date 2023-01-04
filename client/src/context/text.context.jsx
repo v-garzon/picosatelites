@@ -25,7 +25,7 @@ export const TextContextProvider = ({ children }) => {
     const setUserInStorage = (user) => {
         localStorage.setItem('user', JSON.stringify(user))
         setUser(user)
-        console.log(JSON.parse(localStorage.getItem('user')))
+        // console.log(JSON.parse(localStorage.getItem('user')))
 
     }
 
@@ -46,6 +46,9 @@ export const TextContextProvider = ({ children }) => {
     }
 
     const pushNewContent = async (content) => {
+
+        
+        console.log(content)
         const response = await pushNewContentRequest(content)
         return response.data.feedback
     }
@@ -54,7 +57,7 @@ export const TextContextProvider = ({ children }) => {
 
     // }
 
-    const pullPageContent = async ({page}) => {
+    const pullPageContent = async ({ page }) => {
         // console.log(page)
         const newContent = await pullPageContentRequest(page)
         // console.log(newContent.data)

@@ -21,16 +21,19 @@ export function UserContextProvider({ children }) {
     const navigate = useNavigate()
 
     const usernameValidation = /^[a-z0-9_.]+$/
-    const emailValidation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    const emailValidation = /^\w+([\.-]?\w+)*@(.)*(santoangel[.]org)$/
 
     const validateUsername = (text) => usernameValidation.test(text)
     const validateEmail = (text) => emailValidation.test(text)
 
     const register = async (content) => {
         try {
-            if (!validateUsername(content.username, usernameValidation)) {
+            if (!validateUsername(content.username)) {
                 return 'Enter a valid username ([a-z][A-Z][0-9][.][_])'
-            } else if (content.password !== content.confPassword) {
+            } else if (!validateEmail(content.email)) {
+                return "Enter a valid email (Santo Angel's email)"
+            } 
+            else if (content.password !== content.confPassword) {
                 return 'Your passwords do not match'
             } else {
                 const response = await registerRequest(content)
@@ -68,7 +71,7 @@ export function UserContextProvider({ children }) {
                 
 
             } else {
-                return 'Username / email not valid'
+                return "Username / email not valid"
             }
 
         } catch (error) {
