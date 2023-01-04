@@ -4,7 +4,7 @@ const pool = createPool({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'el pensamiento critico es un privilegio de los que piensan',
+    password: '',
     database: 'SatInt_db'
 })
 
