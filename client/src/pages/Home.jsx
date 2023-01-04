@@ -83,7 +83,7 @@ function Home() {
                             >
                                 <button
                                     className="
-                absolute bottom-3
+                absolute bottom-[60px]
                 sm:hidden w-full flex flex-col-reverse items-center text-slate-600 text-2xl"
                                 >
                                     Learn More
