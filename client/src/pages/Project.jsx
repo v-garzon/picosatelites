@@ -10,15 +10,13 @@ function Project() {
     const [content, setContent] = useState(null)
 
     const getContent = async () => {
-        if (!content) {
             var response = await pullPageContent({ page: 'PROJECT' })
             // console.log(response)
             setContent(response)
-        }
     }
 
     useEffect(() => {
-        getContent()
+        if (!content) getContent()
         // console.log(content)
     })
 

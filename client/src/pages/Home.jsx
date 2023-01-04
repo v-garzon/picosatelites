@@ -24,16 +24,14 @@ function Home() {
     };
 
     const getContent = async () => {
-        if (!content) {
             var response = await pullPageContent({ page: 'HOME' })
             // console.log(response)
             setContent(response)
-        }
     }
 
     useEffect(() => {
         attemptPlay()
-        getContent()
+        if (!content) getContent()
         // console.log(content)
 
     }, [])
