@@ -26,7 +26,7 @@ app.use(TextRoute)
 
 
 // BUILDING CONFIG
-// app.use(express.static(join(__dirname, "../client/dist")));
+app.use(express.static(join(__dirname, "../client/dist")));
 
 app.listen(PORT);
 console.log(`Server is running on port: ${PORT}`);
