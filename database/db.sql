@@ -2,7 +2,7 @@
 --USE SatInt_db;
 
 CREATE TABLE users (
-    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(16) NOT NULL,
     email VARCHAR(100) NOT NULL,
     password VARCHAR(60) NOT NULL
@@ -14,7 +14,7 @@ DESCRIBE users;
 CREATE TABLE HOME (
     created_at timestamp PRIMARY KEY DEFAULT current_timestamp,
 
-    section text NOT NULL,
+    section TEXT NOT NULL,
     content TEXT NOT NULL,
     path_to_image VARCHAR(64) NOT NULL,
 
@@ -31,7 +31,7 @@ CREATE TABLE OURTEAM (
     major_contributions VARCHAR(64) NOT NULL,
     contact VARCHAR(64),
     path_to_image VARCHAR(64),
-    leader BOOLEAN,
+    leader VARCHAR(45),
 
 
     user VARCHAR(16) NOT NULL,
