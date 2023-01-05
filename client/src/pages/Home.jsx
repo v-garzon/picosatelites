@@ -45,7 +45,7 @@ function Home() {
                 <div className='w-full h-screen overflow-hidden absolute bg-transparent' style={{ height: 'calc(100vh - 80px)' }}>
                     <video
                         id='video'
-                        className='mix-blend-overlay h-full object-cover w-full bg-black'
+                        className='bg-blend-overlay h-full object-cover w-full bg-black'
                         playsInline
                         loop
                         muted

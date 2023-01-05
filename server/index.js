@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 
 app.use(cors({
-    origin:'http://localhost:5173'
+    origin:'https://vgarzoon.com'
 }))
 
 app.use(express.json());
