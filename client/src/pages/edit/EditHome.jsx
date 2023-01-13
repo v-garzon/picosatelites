@@ -65,9 +65,7 @@ function EditHome() {
 
                                 <fieldset className='edit-fieldset'>
                                     <p className='edit-label'>Put section image:</p>
-                                    <input type="file" name="image" className='edit-input' onChange={() => {
-
-                                    }} />
+                                    <input type="file" name="image" className='edit-input' />
                                     {/* pass onSubmit to control submit image function */}
                                 </fieldset>
 

@@ -12,7 +12,7 @@ function Home() {
 
     const { pullPageContent } = useText()
 
-    const [content, setContent] = useState()
+    const [content, setContent] = useState(null)
 
 
     const attemptPlay = () => {
