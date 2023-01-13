@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const pullPageContentRequest = async (page) =>
-    await axios.get(`https://vgarzoon.com/content/${page}`)
+    await axios.get(`http://localhost:4000/content/${page}`)
 
 export const pullAllContentRequest = async () => {
     const result = await axios.get('https://vgarzoon.com/allcontent')   // change to 'http://localhost:4000/...' when developing
