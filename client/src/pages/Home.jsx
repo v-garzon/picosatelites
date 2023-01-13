@@ -107,7 +107,7 @@ function Home() {
                         <div className='col-span-3 md:px-10 py-5'>
                             <p className='p' id='1-text'>
                                 {
-                                    !content || !content['OurPurspose']
+                                    !content || !content['Our Purspose']
                                         ? '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
                                         : content['Our Purspose'].content
                                 }
@@ -127,7 +127,7 @@ function Home() {
                         <div className='col-span-5 px-10 py-5'>
                             <p className='p' id='2-text'>
                                 {
-                                    !content || !content['OurPurspose']
+                                    !content || !content['Our Purspose']
                                         ? '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'
                                         : content['An Internationa Project'].content
                                 }
