@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 
 app.use(cors({
-    origin:'http://localhost:5173'
+    origin:'https://vgarzoon.com'   // change to 'http://localhost:5173' when developing
 }))
 
 app.use(express.json());
@@ -26,7 +26,7 @@ app.use(TextRoute)
 
 
 // BUILDING CONFIG
-// app.use(express.static(join(__dirname, "../client/dist")));
+app.use(express.static(join(__dirname, "../client/dist")));
 
 app.listen(PORT);
 console.log(`Server is running on port: ${PORT}`);
