@@ -1,4 +1,4 @@
-import { RouterProvider } from 'react-router-dom'
+import { BrowserRouter, RouterProvider, Route, Routes } from 'react-router-dom'
 
 import router from './router/router'
 
@@ -16,12 +16,33 @@ import Login from './pages/auth/Login'
 
 import UserContextLayout from './context/layout/user.context.layout'
 import Edit from './pages/edit/Edit'
+import { TextContextProvider } from './context/text.context'
 
 
 function App() {
     return (
-        <div className="App">            
-            <RouterProvider router={router} />
+        <div className="App">
+            <TextContextProvider>
+                <Navbar />
+
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/support' element={<About />} />
+                    <Route path='/ourteam' element={<OurTeam />} />
+                    <Route path='/news' element={<News />} />
+                    <Route path='/project' element={<Project />} />
+
+                    <Route element={<UserContextLayout />}>
+                        <Route path='/auth/signup' element={<SignUp />} />
+                        <Route path='/auth/login' element={<Login />} />
+                    </Route>
+
+                    <Route path='/edit' element={<Edit />} />
+                </Routes>
+
+                <Footer />
+            </TextContextProvider>
+            {/* <RouterProvider router={router} /> */}
         </div>
     )
 }

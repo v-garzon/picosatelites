@@ -13,8 +13,8 @@ const root = createRoot(container)
 
 root.render(
     <React.StrictMode>
-        <TextContextProvider>
+        <BrowserRouter>
             <App />
-        </TextContextProvider>
+        </BrowserRouter>
     </React.StrictMode>
 )
